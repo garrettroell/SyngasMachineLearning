@@ -9,6 +9,7 @@ def get_ml_slope_time_course_data(slope_ml_dict, smooth_data):
   compositions = range(1,8)
   sim_df = pd.DataFrame()
 
+  print()
   for comp in compositions:
     print(f'comp {comp}')
     comp_df = smooth_data.loc[comp]
@@ -25,6 +26,6 @@ def get_ml_slope_time_course_data(slope_ml_dict, smooth_data):
 
     sim_df =  pd.concat([sim_df , sim_comp_df],sort=True)
 
-  sim_df.set_index(['composition','time'],drop=True,inplace=True) 
+  sim_df.set_index(['composition','time'], drop=True, inplace=True) 
 
   return(sim_df)

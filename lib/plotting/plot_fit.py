@@ -2,10 +2,11 @@ import matplotlib.pyplot as plt
 from data_processing.evaluate_fit import evaluate_fit
 
 
-def plot_fit(df_fit, df_raw, title):
+def plot_fit(df_fit, df_raw, title, save_fig):
+    filename = title.replace(' ', '_') + '.png'
     
-    _ , _, rmse_overall, rmse_dict = evaluate_fit(df_fit, df_raw)
-    title += f' Overall rmse = {rmse_overall}'
+    r2_overall , r2_dict, rmse_overall, rmse_dict = evaluate_fit(df_fit, df_raw)
+    title += f' Overall rmse = {rmse_overall}, Overall r2 = {r2_overall}'
     
     fig, _ = plt.subplots(3,3,figsize=(17,17))
     plt.suptitle(title ,fontsize=20)
@@ -24,7 +25,7 @@ def plot_fit(df_fit, df_raw, title):
         frame = '33'+str(comp)
         plt.subplot(frame)
         
-        title = f'Comp {comp} rmse = {rmse_dict[comp]}' 
+        title = f'Comp {comp} rmse = {rmse_dict[comp]}, r2 = {r2_dict[comp]}' 
         plt.title(title,fontsize=15)
         plt.xlabel('Time (Days)', fontsize = 12)
         plt.ylabel('g/L or mM', fontsize = 12)
@@ -42,4 +43,7 @@ def plot_fit(df_fit, df_raw, title):
         
     series_labels = ['acetate', 'biomass', 'butanol', 'butyrate', 'ethanol']
     fig.legend(handles=[l1, l2, l3, l4, l5], labels = series_labels, loc='lower center', ncol=5)
+
+    if save_fig:
+        plt.savefig(filename, dpi=150)
     

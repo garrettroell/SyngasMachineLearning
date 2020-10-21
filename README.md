@@ -1,4 +1,4 @@
-# Machine-Learning-Clostridium
+# Machine Learning and Kinetic Modeling of Syngas Fermentation
 
 A machine learning project written in python that predicts time course concentrations of biofuel production from syngas fermentations with Clostridium carboxyidivorans.
 

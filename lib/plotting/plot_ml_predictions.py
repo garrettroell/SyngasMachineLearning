@@ -1,9 +1,12 @@
 import matplotlib.pyplot as plt
 
-def plot_ml_predictions(ml_dict, type, title):
+def plot_ml_predictions(ml_dict, type, title, save_fig):
+    filename = 'images/' + title.replace(' ', '_') + '.png'
+    print(filename)
+
     _, _ = plt.subplots(3,3,figsize=(17,17))
     plt.suptitle(title, fontsize=20)
-
+ 
     compositions = range (1,8)
     for comp in compositions:
         plt.subplot(3, 3, comp)
@@ -18,3 +21,6 @@ def plot_ml_predictions(ml_dict, type, title):
         plt.ylabel(f'predicted {type}', fontsize = 12)
         plt.scatter(comp_data[f'train_measured_{type}s'], comp_data[f'train_predicted_{type}s'], color='b')
         plt.scatter(comp_data[f'test_measured_{type}s'], comp_data[f'test_predicted_{type}s'], color='r')
+
+    if save_fig:
+        plt.savefig(filename, dpi=150)

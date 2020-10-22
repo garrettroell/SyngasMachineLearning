@@ -3,7 +3,8 @@ from data_processing.evaluate_fit import evaluate_fit
 
 
 def plot_fit(df_fit, df_raw, title, save_fig):
-    filename = title.replace(' ', '_') + '.png'
+    filename = 'images/' + title.replace(' ', '_') + '.png'
+    print(filename)
     
     r2_overall , r2_dict, rmse_overall, rmse_dict = evaluate_fit(df_fit, df_raw)
     title += f' Overall rmse = {rmse_overall}, Overall r2 = {r2_overall}'

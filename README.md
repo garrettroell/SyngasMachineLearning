@@ -4,6 +4,6 @@ A machine learning project written in python that predicts time course concentra
 
 The goal of this project is to measure the effects of training data augmentation and machine learning algorithm selection.
 
-The most relevant code is in the notebooks folder
+The most relevant code is in the slope_prediction/notebooks folder
 
 

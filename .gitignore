@@ -4,3 +4,4 @@ lib/.ipynb_checkpoints
 .vscode/
 .ipynb_checkpoints
 .DS_Store
+venv

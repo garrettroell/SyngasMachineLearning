@@ -31,7 +31,9 @@ To run the code in this repository use the following commands:
 
 ## Reference
 
-This project is currently under peer review
+[GW Roell, A Sathish, N Wan, Z Wen, YJ Tang, FS Bao. A comparative evaluation of machine learning algorithms in predicting syngas fermentation outcomes using limited experimental data. Biochemical Engineering Journal. 186 (2022)](https://www.sciencedirect.com/science/article/pii/S1369703X22002479?via%3Dihub)
+<br>
+[Non-paywalled pdf](https://garrettroell.com/papers/syngas-machine-learning)
 
 ## License
 
